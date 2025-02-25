@@ -1,11 +1,12 @@
 import { app } from './app'
 import { env } from './env'
 
-// precisamos converter o nosso código para javascript para fazer o deploy
+// precisamos converter o nosso código para javascript para fazer o deploy (usando o tsup), como usamos sqlite preciamos mudar para outro como o pg, em dev usamos sqlite e em prod usamos o pg, mudar a string de conexão pelo mesmo valor, definir engine se preciso, ignorar a pasta build no eslint
 
 app
   .listen({
     port: env.PORT,
+    host: '0.0.0.0',
   })
   .then(() => {
     console.log('Server is running!')
