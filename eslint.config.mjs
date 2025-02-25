@@ -12,5 +12,6 @@ export default [
     rules: {
       '@typescript-eslint/no-unused-expressions': 'off',
     },
+    ignorePatterns: ['build', 'node_modules'],
   },
 ]
